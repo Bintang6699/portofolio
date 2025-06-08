@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Faisal Ahmad Bintang - Web Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: white;
+            overflow-x: hidden;
+        }
+        .contact-card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        .input-field {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-bottom: 2px solid #4cc9f0;
+            transition: all 0.3s ease;
+        }
+        .input-field:focus {
+            background: rgba(255, 255, 255, 0.2);
+            border-bottom: 2px solid #f72585;
+        }
+        .btn-submit {
+            background: linear-gradient(45deg, #f72585, #7209b7);
+            transition: all 0.3s ease;
+        }
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(242, 100, 177, 0.3);
+        }
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #f72585, #7209b7);
+            margin-bottom: 20px;
+        }
+        .map-container {
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 backdrop-filter backdrop-blur-lg bg-opacity-30 bg-black py-4 px-6 shadow-lg">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
+                FAISAL BINTANG
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="home.html" class="nav-link text-white">Home</a>
+                <a href="profile.html" class="nav-link text-white">Profile</a>
+                <a href="about.html" class="nav-link text-white">About</a>
+                <a href="gallery.html" class="nav-link text-white">Gallery</a>
+                <a href="contact.html" class="nav-link active text-white">Contact</a>
+            </div>
+            <button id="mobileMenuButton" class="md:hidden text-white">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden mt-4 py-4 border-t border-gray-700">
+            <div class="flex flex-col space-y-4">
+                <a href="home.html" class="nav-link text-white">Home</a>
+                <a href="profile.html" class="nav-link text-white">Profile</a>
+                <a href="about.html" class="nav-link text-white">About</a>
+                <a href="gallery.html" class="nav-link text-white">Gallery</a>
+                <a href="contact.html" class="nav-link active text-white">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="min-h-screen pt-32 pb-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-bold text-center mb-6 animate__animated animate__fadeInDown">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">Contact Me</span>
+            </h1>
+            <p class="text-xl text-center text-gray-300 max-w-2xl mx-auto mb-16 animate__animated animate__fadeIn animate__delay-1s">
+                Silakan hubungi saya melalui form berikut atau langsung melalui kontak yang tersedia. Saya akan merespon secepat mungkin.
+            </p>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Contact Form -->
+                <div class="contact-card p-8 animate__animated animate__fadeInLeft">
+                    <h2 class="text-2xl font-bold mb-8">Send Me a Message</h2>
+                    
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block mb-2 text-sm font-medium">Your Name</label>
+                            <input type="text" id="name" name="name" class="input-field w-full p-3 rounded-lg focus:outline-none text-white" placeholder="Enter your name" required>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block mb-2 text-sm font-medium">Your Email</label>
+                            <input type="email" id="email" name="email" class="input-field w-full p-3 rounded-lg focus:outline-none text-white" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block mb-2 text-sm font-medium">Subject</label>
+                            <input type="text" id="subject" name="subject" class="input-field w-full p-3 rounded-lg focus:outline-none text-white" placeholder="Enter subject" required>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block mb-2 text-sm font-medium">Your Message</label>
+                            <textarea id="message" name="message" rows="5" class="input-field w-full p-3 rounded-lg focus:outline-none text-white" placeholder="Enter your message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-submit w-full py-3 rounded-lg font-semibold">
+                            SEND MESSAGE
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="space-y-8 animate__animated animate__fadeInRight">
+                    <!-- Contact Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="contact-card p-6 text-center">
+                            <div class="contact-icon mx-auto">
+                                <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Location</h3>
+                            <p class="text-gray-300">Jl. Teknologi No. 123<br>Jakarta, Indonesia</p>
+                        </div>
+                        
+                        <div class="contact-card p-6 text-center">
+                            <div class="contact-icon mx-auto">
+                                <i class="fas fa-envelope text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Email</h3>
+                            <p class="text-gray-300">bintangahmad032@gmail.com<br>faisal@example.com</p>
+                        </div>
+                        
+                        <div class="contact-card p-6 text-center">
+                            <div class="contact-icon mx-auto">
+                                <i class="fas fa-phone-alt text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Phone</h3>
+                            <p class="text-gray-300">+62 812 3456 7890<br>+62 821 9876 5432</p>
+                        </div>
+                        
+                        <div class="contact-card p-6 text-center">
+                            <div class="contact-icon mx-auto">
+                                <i class="fas fa-clock text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Working Hours</h3>
+                            <p class="text-gray-300">Senin - Jumat<br>09:00 - 17:00 WIB</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Media -->
+                    <div class="contact-card p-6">
+                        <h3 class="text-xl font-bold mb-6">Follow Me</h3>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#" class="w-12 h-12 rounded-full bg-pink-500/20 flex items-center justify-center text-pink-400 hover:bg-pink-500 hover:text-white transition-colors">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 hover:bg-blue-500 hover:text-white transition-colors">
+                                <i class="fab fa-linkedin-in text-xl"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 rounded-full bg-blue-400/20 flex items-center justify-center text-blue-300 hover:bg-blue-400 hover:text-white transition-colors">
+                                <i class="fab fa-twitter text-xl"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center text-red-400 hover:bg-red-500 hover:text-white transition-colors">
+                                <i class="fab fa-youtube text-xl"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 hover:bg-purple-500 hover:text-white transition-colors">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Map -->
+                    <div class="contact-card p-0 overflow-hidden">
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.8195613506394!3d-6.194741395493371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5390917b759%3A0x6b45e839560a85ab!2sMonumen%20Nasional!5e0!3m2!1sen!2sid!4v1621231234567!5m2!1sen!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 bg-black/70">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">FAISAL BINTANG</h3>
+                    <p class="text-gray-400 mb-4">
+                        Web Developer & AI Enthusiast dengan pengalaman membangun aplikasi modern dan inovatif.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-pink-500 transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-red-500 transition-colors">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="home.html" class="text-gray-400 hover:text-pink-500 transition-colors">Home</a></li>
+                        <li><a href="profile.html" class="text-gray-400 hover:text-pink-500 transition-colors">Profile</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-pink-500 transition-colors">About</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-pink-500 transition-colors">Gallery</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-pink-500 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-pink-500 transition-colors">Web Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-pink-500 transition-colors">AI Integration</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-pink-500 transition-colors">Mobile Apps</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-pink-500 transition-colors">UI/UX Design</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-pink-500 transition-colors">Consultation</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-pink-500"></i>
+                            <span>Jl. Teknologi No. 123, Jakarta, Indonesia</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-pink-500"></i>
+                            <span>bintangahmad032@gmail.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-3 text-pink-500"></i>
+                            <span>+62 812 3456 7890</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+                <p>&copy; 2023 Faisal Ahmad Bintang. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/contact.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuButton').addEventListener('click', function() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Highlight active nav link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if(link.href === window.location.href) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

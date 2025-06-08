@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Faisal Ahmad Bintang - Web Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: white;
+            overflow-x: hidden;
+        }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            transform: translateY(50px);
+            opacity: 0;
+        }
+        .card.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .card:hover {
+            transform: translateY(-10px) !important;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(90deg, #f72585, #7209b7);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .active::after {
+            width: 100%;
+        }
+        .hero-text {
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .skill-bar {
+            height: 8px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+        }
+        .skill-progress {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #f72585, #7209b7);
+            transition: width 1.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 backdrop-filter backdrop-blur-lg bg-opacity-30 bg-black py-4 px-6 shadow-lg">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
+                FAISAL BINTANG
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="home.html" class="nav-link active text-white">Home</a>
+                <a href="profile.html" class="nav-link text-white">Profile</a>
+                <a href="about.html" class="nav-link text-white">About</a>
+                <a href="gallery.html" class="nav-link text-white">Gallery</a>
+                <a href="contact.html" class="nav-link text-white">Contact</a>
+            </div>
+            <button id="mobileMenuButton" class="md:hidden text-white">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden mt-4 py-4 border-t border-gray-700">
+            <div class="flex flex-col space-y-4">
+                <a href="home.html" class="nav-link active text-white">Home</a>
+                <a href="profile.html" class="nav-link text-white">Profile</a>
+                <a href="about.html" class="nav-link text-white">About</a>
+                <a href="gallery.html" class="nav-link text-white">Gallery</a>
+                <a href="contact.html" class="nav-link text-white">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center pt-20 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <h1 class="hero-text text-5xl md:text-7xl font-bold mb-6 animate__animated animate__fadeInDown">
+                Hi, I'm <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">Faisal Ahmad Bintang</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto animate__animated animate__fadeIn animate__delay-1s">
+                Web Developer | AI Enthusiast | React Specialist | Dart Programmer
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 animate__animated animate__fadeInUp animate__delay-1s">
+                <a href="contact.html" class="px-8 py-3 bg-gradient-to-r from-pink-500 to-violet-600 rounded-full font-semibold hover:shadow-lg hover:shadow-pink-500/30 transition-all duration-300">
+                    Hire Me
+                </a>
+                <a href="profile.html" class="px-8 py-3 border border-white rounded-full font-semibold hover:bg-white hover:text-black transition-all duration-300">
+                    My Profile
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16">My <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">Services</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="card p-8">
+                    <div class="text-pink-500 mb-4 text-4xl">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Web Development</h3>
+                    <p class="text-gray-300 mb-6">
+                        Membangun website responsif dan modern dengan teknologi terbaru seperti React, Tailwind, dan Bootstrap.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-pink-500/20 text-pink-400 rounded-full text-sm">React</span>
+                        <span class="px-3 py-1 bg-violet-500/20 text-violet-400 rounded-full text-sm">Tailwind</span>
+                        <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">Bootstrap</span>
+                    </div>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="card p-8">
+                    <div class="text-violet-500 mb-4 text-4xl">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">AI Integration</h3>
+                    <p class="text-gray-300 mb-6">
+                        Mengintegrasikan kecerdasan buatan ke dalam aplikasi web untuk meningkatkan fungsionalitas dan user experience.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm">TensorFlow</span>
+                        <span class="px-3 py-1 bg-yellow-500/20 text-yellow-400 rounded-full text-sm">OpenAI API</span>
+                        <span class="px-3 py-1 bg-red-500/20 text-red-400 rounded-full text-sm">Machine Learning</span>
+                    </div>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="card p-8">
+                    <div class="text-blue-500 mb-4 text-4xl">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Mobile Development</h3>
+                    <p class="text-gray-300 mb-6">
+                        Mengembangkan aplikasi mobile cross-platform menggunakan Flutter dan Dart untuk performa optimal di semua perangkat.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">Flutter</span>
+                        <span class="px-3 py-1 bg-teal-500/20 text-teal-400 rounded-full text-sm">Dart</span>
+                        <span class="px-3 py-1 bg-indigo-500/20 text-indigo-400 rounded-full text-sm">Firebase</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-20 px-4 bg-gradient-to-r from-black/30 to-black/50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16">My <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">Skills</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Left Column -->
+                <div>
+                    <div class="mb-8">
+                        <div class="flex justify-between mb-2">
+                            <span>HTML/CSS</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <div class="flex justify-between mb-2">
+                            <span>JavaScript</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <div class="flex justify-between mb-2">
+                            <span>React.js</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column -->
+                <div>
+                    <div class="mb-8">
+                        <div class="flex justify-between mb-2">
+                            <span>Tailwind CSS</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <div class="flex justify-between mb-2">
+                            <span>Dart/Flutter</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <div class="flex justify-between mb-2">
+                            <span>AI Integration</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Preview -->
+    <section class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16">Featured <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">Projects</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="card overflow-hidden rounded-xl">
+                    <div class="relative group">
+                        <img src="https://source.unsplash.com/random/600x400/?web,design" alt="Project 1" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-2">E-Commerce Website</h3>
+                                <p class="text-gray-300 mb-4">Website e-commerce dengan React dan Node.js</p>
+                                <a href="#" class="text-pink-400 hover:underline">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="card overflow-hidden rounded-xl">
+                    <div class="relative group">
+                        <img src="https://source.unsplash.com/random/600x400/?app,mobile" alt="Project 2" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-2">Mobile Fitness App</h3>
+                                <p class="text-gray-300 mb-4">Aplikasi fitness dengan Flutter dan Firebase</p>
+                                <a href="#" class="text-pink-400 hover:underline">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="gallery.html" class="px-8 py-3 border border-white rounded-full font-semibold hover:bg-white hover:text-black transition-all duration-300 inline-block">
+                    View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 px-4 bg-gradient-to-r from-black/30 to-black/50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16">Client <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">Testimonials</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="card p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sarah Johnson</h4>
+                            <p class="text-sm text-gray-400">CEO TechSolutions</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "Faisal mengembangkan website perusahaan kami dengan sangat profesional. Hasilnya melebihi ekspektasi!"
+                    </p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="card p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Michael Chen</h4>
+                            <p class="text-sm text-gray-400">Founder StartupX</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "Integrasi AI yang dilakukan Faisal untuk aplikasi kami sangat mengesankan. Highly recommended!"
+                    </p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="card p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Lisa Rodriguez</h4>
+                            <p class="text-sm text-gray-400">Marketing Director</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "Aplikasi mobile yang dikembangkan Faisal sangat user-friendly dan memiliki performa yang luar biasa."
+                    </p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 bg-black/70">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">FAISAL BINTANG</h3>
+                    <p class="text-gray-400 mb-4">
+                        Web Developer & AI Enthusiast dengan pengalaman membangun aplikasi modern dan inovatif.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-pink-500 transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-red-500 transition-colors">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="home.html" class="text-gray-400 hover:text-pink-500 transition-colors">Home</a></li>
+                        <li><a href="profile.html" class="text-gray-400 hover:text-pink-500 transition-colors">Profile</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-pink-500 transition-colors">About</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-pink-500 transition-colors">Gallery</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-pink-500 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-pink-500 transition-colors">Web Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-pink-500 transition-colors">AI Integration</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-pink-500 transition-colors">Mobile Apps</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-pink-500 transition-colors">UI/UX Design</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-pink-500 transition-colors">Consultation</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-pink-500"></i>
+                            <span>Jl. Teknologi No. 123, Jakarta, Indonesia</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-pink-500"></i>
+                            <span>bintangahmad032@gmail.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-3 text-pink-500"></i>
+                            <span>+62 812 3456 7890</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+                <p>&copy; 2023 Faisal Ahmad Bintang. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuButton').addEventListener('click', function() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Highlight active nav link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if(link.href === window.location.href) {
+                link.classList.add('active');
+            }
+        });
+        
+        // Card animation on scroll
+        const cards = document.querySelectorAll('.card');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        cards.forEach(card => {
+            observer.observe(card);
+        });
+        
+        // Animate skill bars on scroll
+        const skillBars = document.querySelectorAll('.skill-progress');
+        
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    const width = entry.target.style.width;
+                    entry.target.style.width = '0';
+                    setTimeout(() => {
+                        entry.target.style.width = width;
+                    }, 100);
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
+        
+        skillBars.forEach(bar => {
+            skillObserver.observe(bar);
+        });
+    </script>
+</body>
+</html>

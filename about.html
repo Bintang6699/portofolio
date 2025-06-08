@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Faisal Ahmad Bintang - Web Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: white;
+            overflow-x: hidden;
+        }
+        .about-card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        .about-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 30px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #f72585, #7209b7);
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 20px;
+            width: 1px;
+            height: calc(100% - 15px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .timeline-item:last-child::after {
+            display: none;
+        }
+        .counter-item {
+            transition: all 0.3s ease;
+        }
+        .counter-item:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 backdrop-filter backdrop-blur-lg bg-opacity-30 bg-black py-4 px-6 shadow-lg">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
+                FAISAL BINTANG
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="home.html" class="nav-link text-white">Home</a>
+                <a href="profile.html" class="nav-link text-white">Profile</a>
+                <a href="about.html" class="nav-link active text-white">About</a>
+                <a href="gallery.html" class="nav-link text-white">Gallery</a>
+                <a href="contact.html" class="nav-link text-white">Contact</a>
+            </div>
+            <button id="mobileMenuButton" class="md:hidden text-white">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden mt-4 py-4 border-t border-gray-700">
+            <div class="flex flex-col space-y-4">
+                <a href="home.html" class="nav-link text-white">Home</a>
+                <a href="profile.html" class="nav-link text-white">Profile</a>
+                <a href="about.html" class="nav-link active text-white">About</a>
+                <a href="gallery.html" class="nav-link text-white">Gallery</a>
+                <a href="contact.html" class="nav-link text-white">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section class="min-h-screen pt-32 pb-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-bold text-center mb-6 animate__animated animate__fadeInDown">
+                About <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">Me</span>
+            </h1>
+            <p class="text-xl text-center text-gray-300 max-w-2xl mx-auto mb-16 animate__animated animate__fadeIn animate__delay-1s">
+                Lebih dalam tentang siapa saya, filosofi kerja, dan pencapaian saya.
+            </p>
+            
+            <!-- About Content -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+                <div class="about-card p-8 animate__animated animate__fadeInLeft">
+                    <h2 class="text-2xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">Who I Am</h2>
+                    <p class="text-gray-300 mb-6">
+                        Saya Faisal Ahmad Bintang, seorang Web Developer dan AI Enthusiast berbasis di Jakarta, Indonesia. Dengan lebih dari 5 tahun pengalaman di industri teknologi, saya telah membantu berbagai klien mewujudkan visi digital mereka.
+                    </p>
+                    <p class="text-gray-300 mb-6">
+                        Saya memiliki passion dalam menciptakan solusi teknologi yang tidak hanya fungsional tetapi juga memberikan pengalaman pengguna yang luar biasa. Pendekatan saya dalam pengembangan web dan aplikasi selalu berfokus pada kualitas, performa, dan keamanan.
+                    </p>
+                    <p class="text-gray-300">
+                        Selain coding, saya juga senang berbagi pengetahuan melalui blog dan workshop. Saya percaya bahwa berbagi pengetahuan adalah cara terbaik untuk berkembang bersama komunitas teknologi.
+                    </p>
+                </div>
+                
+                <div class="about-card p-8 animate__animated animate__fadeInRight">
+                    <h2 class="text-2xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">My Philosophy</h2>
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-xl font-bold mb-2 text-pink-400">Clean Code</h3>
+                            <p class="text-gray-300">
+                                Saya percaya bahwa kode yang bersih dan terstruktur adalah dasar dari pengembangan perangkat lunak yang berkelanjutan. Setiap baris kode yang saya tulis selalu mempertimbangkan kemudahan pemeliharaan di masa depan.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold mb-2 text-violet-400">User Experience</h3>
+                            <p class="text-gray-300">
+                                Pengalaman pengguna adalah prioritas utama. Saya selalu berusaha menciptakan antarmuka yang intuitif dan menyenangkan untuk digunakan, dengan memperhatikan setiap detail interaksi.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold mb-2 text-blue-400">Continuous Learning</h3>
+                            <p class="text-gray-300">
+                                Dunia teknologi terus berkembang, dan begitu pula saya. Saya selalu mempelajari teknologi baru dan memperbarui keterampilan saya untuk memberikan solusi yang paling relevan dan modern.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+                <div class="counter-item about-card p-6 text-center">
+                    <div class="text-4xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500" data-count="50">0</div>
+                    <p class="text-gray-300">Projects Completed</p>
+                </div>
+                
+                <div class="counter-item about-card p-6 text-center">
+                    <div class="text-4xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500" data-count="35">0</div>
+                    <p class="text-gray-300">Happy Clients</p>
+                </div>
+                
+                <div class="counter-item about-card p-6 text-center">
+                    <div class="text-4xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500" data-count="5">0</div>
+                    <p class="text-gray-300">Years Experience</p>
+                </div>
+                
+                <div class="counter-item about-card p-6 text-center">
+                    <div class="text-4xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500" data-count="12">0</div>
+                    <p class="text-gray-300">Awards Won</p>
+                </div>
+            </div>
+            
+            <!-- Timeline -->
+            <div class="about-card p-8 animate__animated animate__fadeInUp">
+                <h2 class="text-2xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">My Journey</h2>
+                
+                <div class="timeline-item">
+                    <h3 class="text-xl font-bold mb-1">Memulai Karir di StartupX</h3>
+                    <p class="text-pink-400 mb-2">2017</p>
+                    <p class="text-gray-300">
+                        Memulai karir sebagai junior developer di sebuah startup teknologi. Di sini saya belajar dasar-dasar pengembangan web modern dan bekerja dengan tim yang kolaboratif.
+                    </p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3 class="text-xl font-bold mb-1">Bergabung dengan Digital Creative Agency</h3>
+                    <p class="text-pink-400 mb-2">2019</p>
+                    <p class="text-gray-300">
+                        Beralih ke agensi kreatif di mana saya bekerja dengan berbagai klien dari berbagai industri. Pengalaman ini mengasah kemampuan komunikasi dan pemecahan masalah saya.
+                    </p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3 class="text-xl font-bold mb-1">Menjadi Senior Developer di TechSolutions</h3>
+                    <p class="text-pink-400 mb-2">2021</p>
+                    <p class="text-gray-300">
+                        Diangkat sebagai senior developer dan memimpin tim frontend. Bertanggung jawab atas arsitektur aplikasi dan mentoring developer junior.
+                    </p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3 class="text-xl font-bold mb-1">Memulai Freelance & Projek Pribadi</h3>
+                    <p class="text-pink-400 mb-2">2023</p>
+                    <p class="text-gray-300">
+                        Memutuskan untuk bekerja secara freelance dan mengerjakan proyek-proyek pribadi yang lebih berfokus pada integrasi AI dengan aplikasi web.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 bg-black/70">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">FAISAL BINTANG</h3>
+                    <p class="text-gray-400 mb-4">
+                        Web Developer & AI Enthusiast dengan pengalaman membangun aplikasi modern dan inovatif.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-pink-500 transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-red-500 transition-colors">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="home.html" class="text-gray-400 hover:text-pink-500 transition-colors">Home</a></li>
+                        <li><a href="profile.html" class="text-gray-400 hover:text-pink-500 transition-colors">Profile</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-pink-500 transition-colors">About</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-pink-500 transition-colors">Gallery</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-pink-500 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-pink-500 transition-colors">Web Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-pink-500 transition-colors">AI Integration</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-pink-500 transition-colors">Mobile Apps</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-pink-500 transition-colors">UI/UX Design</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-pink-500 transition-colors">Consultation</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-white">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-pink-500"></i>
+                            <span>Jl. Teknologi No. 123, Jakarta, Indonesia</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-pink-500"></i>
+                            <span>bintangahmad032@gmail.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-3 text-pink-500"></i>
+                            <span>+62 812 3456 7890</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+                <p>&copy; 2023 Faisal Ahmad Bintang. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuButton').addEventListener('click', function() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Highlight active nav link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if(link.href === window.location.href) {
+                link.classList.add('active');
+            }
+        });
+        
+        // Counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('[data-count]');
+            const speed = 200;
+            
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-count');
+                const count = +counter.innerText;
+                const increment = target / speed;
+                
+                if(count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(animateCounters, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        }
+        
+        // Start counter when section is visible
+        const counterSection = document.querySelector('.counter-item');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
+        
+        if(counterSection) {
+            observer.observe(counterSection);
+        }
+    </script>
+</body>
+</html>

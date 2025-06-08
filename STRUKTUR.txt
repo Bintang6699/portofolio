@@ -1,0 +1,18 @@
+/portofolio-faisal/
+├── index.html          # Halaman Login
+├── home.html           # Halaman Menu Utama
+├── profile.html        # Halaman Profile
+├── about.html          # Halaman About
+├── contact.html        # Halaman Contact
+├── gallery.html        # Halaman Gallery
+├── assets/
+│   ├── css/
+│   │   └── style.css   # CSS tambahan
+│   ├── js/
+│   │   ├── main.js     # JavaScript utama
+│   │   ├── auth.js     # Autentikasi login
+│   │   └── contact.js  # Form contact
+│   ├── images/         # Folder untuk gambar
+└── server/             # Folder untuk backend
+    ├── auth.php        # Backend login
+    └── contact.php     # Backend contact form

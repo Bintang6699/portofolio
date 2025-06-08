@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Faisal Ahmad Bintang - Web Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            height: 100vh;
+            overflow: hidden;
+        }
+        .login-card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        .login-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        .input-field {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-bottom: 2px solid #4cc9f0;
+            transition: all 0.3s ease;
+        }
+        .input-field:focus {
+            background: rgba(255, 255, 255, 0.2);
+            border-bottom: 2px solid #f72585;
+        }
+        .btn-login {
+            background: linear-gradient(45deg, #f72585, #7209b7);
+            transition: all 0.3s ease;
+        }
+        .btn-login:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(242, 100, 177, 0.3);
+        }
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center text-white">
+    <!-- Background Particles -->
+    <div id="particles"></div>
+    
+    <!-- Login Card -->
+    <div class="login-card p-10 w-full max-w-md mx-4 animate__animated animate__fadeIn">
+        <div class="text-center mb-10">
+            <h1 class="text-4xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">FAISAL BINTANG</h1>
+            <p class="text-gray-300">Web Developer & AI Enthusiast</p>
+        </div>
+        
+        <form id="loginForm" class="space-y-6">
+            <div>
+                <label for="username" class="block mb-2 text-sm font-medium">Username</label>
+                <input type="text" id="username" class="input-field w-full p-3 rounded-lg focus:outline-none text-white" placeholder="Masukkan username" required>
+            </div>
+            
+            <div>
+                <label for="password" class="block mb-2 text-sm font-medium">Password</label>
+                <input type="password" id="password" class="input-field w-full p-3 rounded-lg focus:outline-none text-white" placeholder="Masukkan password" required>
+            </div>
+            
+            <button type="submit" class="btn-login w-full py-3 rounded-lg font-semibold">LOGIN</button>
+        </form>
+        
+        <div class="mt-6 text-center text-sm text-gray-400">
+            <p>Belum punya akun? <span class="text-pink-400 cursor-pointer hover:underline">Hubungi admin</span></p>
+        </div>
+    </div>
+
+    <script src="assets/js/auth.js"></script>
+    <script>
+        // Create particles
+        document.addEventListener('DOMContentLoaded', function() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random properties
+                const size = Math.random() * 5 + 2;
+                const posX = Math.random() * window.innerWidth;
+                const posY = Math.random() * window.innerHeight;
+                const opacity = Math.random() * 0.5 + 0.1;
+                const delay = Math.random() * 5;
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${posX}px`;
+                particle.style.top = `${posY}px`;
+                particle.style.opacity = opacity;
+                particle.style.animation = `float ${Math.random() * 10 + 5}s linear ${delay}s infinite`;
+                
+                particlesContainer.appendChild(particle);
+            }
+            
+            // Add floating animation
+            const style = document.createElement('style');
+            style.innerHTML = `
+                @keyframes float {
+                    0% { transform: translateY(0) translateX(0); }
+                    50% { transform: translateY(-100px) translateX(50px); }
+                    100% { transform: translateY(0) translateX(0); }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
